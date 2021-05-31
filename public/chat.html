@@ -53,22 +53,24 @@
 
 
 
-        <script class="sidebar" id="sidebar-template" type="text/html">
-            <div>
-                <h2 class="room-title">Room: {{room}}</h2>
-                <h3 class="list-title">Users:</h3>
-                <ul class="users">
-                    {{#users}}
-                        <li>{{username}}</li>
-                    {{/users}}
-                </ul>
-            </div>
-            
-
-            <div id="leave-room-button">
-                <form action="/index.html">
-                    <button>Leave Room</button>
-                </form>
+        <script id="sidebar-template" type="text/html">
+            <div class="sidebar">
+                <div>
+                    <h2 class="room-title">Room: {{room}}</h2>
+                    <h3 class="list-title">Users:</h3>
+                    <ul class="users">
+                        {{#users}}
+                            <li>{{username}}</li>
+                        {{/users}}
+                    </ul>
+                </div>
+                
+    
+                <div id="leave-room-button">
+                    <form action="/index.html">
+                        <button>Leave Room</button>
+                    </form>
+                </div>
             </div>
         </script>
 

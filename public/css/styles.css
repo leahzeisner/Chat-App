@@ -162,9 +162,16 @@ button:disabled {
 
 /* Chat Sidebar Styles */
 
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
 #leave-room-button {
-    margin-top: 35.7rem;
-    padding-left: 3rem;
+    margin: 0 0 23px 52.5px;
 }
 
 .room-title {
