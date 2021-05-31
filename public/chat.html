@@ -4,7 +4,7 @@
     <header>
         <title>Chat App</title>
         <link rel="icon" href="/img/favicon.png" />
-        <link rel="stylesheet" href="css/styles.min.css" />
+        <link rel="stylesheet" href="css/styles.css" />
     </header>
 
     <body>
@@ -53,14 +53,23 @@
 
 
 
-        <script id="sidebar-template" type="text/html">
-            <h2 class="room-title">Room: {{room}}</h2>
-            <h3 class="list-title">Users:</h3>
-            <ul class="users">
-                {{#users}}
-                    <li>{{username}}</li>
-                {{/users}}
-            </ul>
+        <script class="sidebar" id="sidebar-template" type="text/html">
+            <div>
+                <h2 class="room-title">Room: {{room}}</h2>
+                <h3 class="list-title">Users:</h3>
+                <ul class="users">
+                    {{#users}}
+                        <li>{{username}}</li>
+                    {{/users}}
+                </ul>
+            </div>
+            
+
+            <div id="leave-room-button">
+                <form action="/index.html">
+                    <button>Leave Room</button>
+                </form>
+            </div>
         </script>
 
         
