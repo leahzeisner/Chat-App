@@ -4,7 +4,7 @@ const path = require('path')
 const socketio = require('socket.io')
 const Filter = require('bad-words')
 const { generateMessage, generateLocationMessage } = require('./utils/messages')
-const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users')
+const { addUser, removeUser, getUser, getUsersInRoom, getActiveRooms } = require('./utils/users')
 
 
 const publicDirPath = path.join(__dirname, '../public')
@@ -23,13 +23,19 @@ io.on('connection', (socket) => {
     console.log('new web socket connection')
 
 
-    socket.on('join', ({ username, room }, callback) => {
+    io.emit('activeRoomData', {
+        rooms: getActiveRooms()
+      })
+
+
+
+    socket.on('join', ({ username, room }, callback) => {      
         const {error, user} = addUser({ id: socket.id, username, room})
 
         if (error) {
             return callback(error)
         }
-
+       
         socket.join(user.room)
 
         socket.emit('message', generateMessage('Admin', 'Welcome to the chat!'))
@@ -39,6 +45,10 @@ io.on('connection', (socket) => {
             room: user.room,
             users: getUsersInRoom(user.room)
         })
+
+        io.emit('activeRoomData', {
+            rooms: getActiveRooms()
+          })
 
         callback()
     })
@@ -73,6 +83,10 @@ io.on('connection', (socket) => {
                 room: user.room,
                 users: getUsersInRoom(user.room)
             })
+
+            io.emit('activeRoomData', {
+                rooms: getActiveRooms()
+              })
         }       
     })
 })  

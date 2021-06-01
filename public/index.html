@@ -12,15 +12,29 @@
             <div class="centered-form__box">
                 <h1>Join</h1>
 
-                <form action="/chat.html">
+                <form id="join-form" action="/chat.html">
                     <label>Display Name:</label>
-                    <input type="text" name="username" placeholder="Username" required />
+                    <input id="name-input" type="text" name="username" placeholder="Username" required />
+
                     <label>Room:</label>
-                    <input type="text" name="room" placeholder="Room" required />
-                    <button>Join Room</button>
+                    <input id="room-input" type="text" name="room" placeholder="Room" required />
+
+                    <div class="pick-room">
+                        <label id="active-room-label">Active Rooms:</label>
+                        <div id="room-list" action="/chat.html">
+                            <select style="color: #777;" id="active-room-list"></select>
+                        </div>
+                    </div>
+
+                    <button>Join Room</button>                           
                 </form>
 
             </div>
         </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/index.js"></script>
     </body>
 </html>
