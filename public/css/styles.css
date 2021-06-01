@@ -40,7 +40,8 @@ input {
 button {
     cursor: pointer;
     padding: 12px;
-    background: #7C5CBF;
+    /* background: #7C5CBF; */
+    background: rgba(0, 140, 255, 0.979);
     border: none;
     color: white;
     font-size: 16px;
@@ -48,23 +49,42 @@ button {
 }
 
 button:hover {
-    background: #6b47b8;
+    /* background: #6b47b8; */
+    background: rgb(0, 60, 255)
 }
 
 button:disabled {
     cursor: default;
-    background: #7c5cbf94;
+    /* background: #7c5cbf94; */
+    background: rgba(0, 140, 255, 0.205);
 }
 
 /* Join Page Styles */
 
+.header {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#header__title {
+    font-size: 50px;
+}
+
+#header__subtitle {
+    font-size: 30px;
+    margin-left: 27px;
+    margin-bottom: 30px;
+}
+
 .centered-form {
-    background: #333744;
+    background: rgba(255, 0, 0, 0.637);
     width: 100vw;
     height: 100vh;   
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .centered-form__box {
@@ -99,8 +119,8 @@ select {
 
 .chat__sidebar {
     height: 100vh;
-    color: white;
-    background: #333744;
+    /* color: white; */
+    color: #2f2f2f;
     width: 225px;
     overflow-y: scroll;
 }
@@ -175,6 +195,7 @@ select {
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;
+    background: rgba(255, 0, 0, 0.637);
     min-height: 100vh;
 }
 
@@ -183,14 +204,14 @@ select {
 }
 
 .room-title {
-    font-weight: 400;
+    font-weight: bold;
     font-size: 22px;
-    background: #2c2f3a;
-    padding: 24px;   
+    padding: 24px; 
 }
 
 .list-title {
-    font-weight: 500;
+    /* font-weight: 500; */
+    font-weight: bold;
     font-size: 18px;
     margin-bottom: 4px;
     padding: 12px 24px 0 24px;
@@ -198,6 +219,6 @@ select {
 
 .users {
     list-style-type: none;
-    font-weight: 300;
+    font-weight: 500;
     padding: 12px 24px 0 24px;
 }
